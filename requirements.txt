@@ -1,0 +1,4 @@
+scrapy
+pytest
+pytest-watch
+mypy
