@@ -3,7 +3,9 @@ from typing import List, Dict
 
 
 def process_ingredients(ingredients: List, quantity: List, servings: str) -> Dict:
+    print('servings')
     servings = process_servings(servings)
+    print(servings)
     preprocesser = Preprocesser(ingredients, quantity, servings)
     output = preprocesser.build()
 
@@ -11,13 +13,10 @@ def process_ingredients(ingredients: List, quantity: List, servings: str) -> Dic
 
 
 def process_servings(strings: str) -> str:
-    servings = re.sub(
-        r'[!"#$%&\'\\\\()*+,-./:;<=>?@[\\]^_`{|}~「」〔〕“”〈〉『』【】＆＊・（）＄＃＠。、？！｀＋￥％]〈〉]',
-        '',
-        strings
-    )
+    regex = re.compile('[!"#$%&\'\\\\()*+,-./:;<=>?@[\\]^_`{|}~「」〔〕“”〈〉『』【】＆＊・（）＄＃＠。、？！｀＋￥％]')
+    strings = regex.sub('', strings)
 
-    return servings
+    return strings
 
 
 class Preprocesser:
