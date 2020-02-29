@@ -13,8 +13,6 @@ class BtrecipeSpider(scrapy.Spider):
     allowed_domains = ['www.bh-recipe.jp']
     start_urls = ['https://www.bh-recipe.jp/recipe']
 
-    rules = [Rule(LinkExtractor('*.html'), callback='parse', follow=True)]
-
     def parse(self, response):
         title = response.xpath('//h1/text()').get()
         url = response.url
