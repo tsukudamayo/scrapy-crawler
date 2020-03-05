@@ -64,6 +64,7 @@ class BtrecipeSpider(scrapy.Spider):
             "ingredients": ingredients
         }
         print(output)
+        # XXX duplicate XXX
         basename = os.path.basename(url)
         fname, _ = os.path.splitext(basename)
         filepath = os.path.join('./dest', fname + '_' + title + '.json')
@@ -71,3 +72,4 @@ class BtrecipeSpider(scrapy.Spider):
         print(filepath)
         with open(filepath, 'w', encoding='utf-8') as w:
             json.dump(output, w, indent=4, ensure_ascii=False)
+        # XXX duplicate XXX
