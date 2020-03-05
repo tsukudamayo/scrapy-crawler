@@ -1,4 +1,5 @@
 scrapy
+scrapy-splash
 pytest
 pytest-watch
 mypy
