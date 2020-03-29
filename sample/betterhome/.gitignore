@@ -1,2 +1,4 @@
 dest/
 category/
+method/
+.mypy_cache/
