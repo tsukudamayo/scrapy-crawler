@@ -1,7 +1,7 @@
 scrapy
-scrapy-splash
 pytest
 pytest-watch
 mypy
 virtualenv
 epc
+azure-storage
